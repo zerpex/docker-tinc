@@ -70,7 +70,7 @@ if [[ $TINC_WEIGHT ]]; then tinc set Weight $TINC_WEIGHT; fi
 
 # Create up & down scripts
 echo "#!/bin/sh
-ifconfig \$INTERFACE $TINC_SUBNET netmask $TINC_NETMASK" > /etc/tinc/tinc-up
+ifconfig \$INTERFACE $TINC_IP netmask $TINC_NETMASK" > /etc/tinc/tinc-up
 
 echo '#!/bin/sh
 ifconfig $INTERFACE down' > /etc/tinc/tinc-down
