@@ -6,7 +6,7 @@ RUN for i in `find / -perm +6000 -type f 2>/dev/null`; do chmod a-s $i; done
 
 # Install Tinc and utility packages
 RUN apt-get update && \
-apt-get install -y --no-install-recommends build-essential libncurses5-dev libreadline6-dev libzlcore-dev zlib1g-dev liblzo2-dev libssl-dev && \
+apt-get install -y build-essential libncurses5-dev libreadline6-dev libzlcore-dev zlib1g-dev liblzo2-dev libssl-dev && \
 apt-get install -y --no-install-recommends net-tools supervisor curl && \
 cd /tmp && \
 curl -o tinc.tgz http://tinc-vpn.org/packages/tinc-1.1pre14.tar.gz && \
