@@ -11,7 +11,6 @@ apt-get install -y --no-install-recommends net-tools supervisor curl && \
 cd /tmp && \
 curl -o tinc.tgz http://tinc-vpn.org/packages/tinc-1.1pre14.tar.gz && \
 tar zxvf tinc.tgz && cd tinc-1.1pre14 && ./configure && make && make install && \
-apt-get autoremove -y build-essential libncurses5-dev libreadline6-dev libzlcore-dev zlib1g-dev liblzo2-dev libssl-dev && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
