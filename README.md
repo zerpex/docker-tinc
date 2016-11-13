@@ -1,4 +1,4 @@
-	# Containerized tinc daemon and API interface
+# Containerized tinc daemon and API interface
 
 Dockerfile (c) 2016 B&S Sistemas de Control, info@bys-control.com.ar
 
