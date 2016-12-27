@@ -13,7 +13,7 @@ apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Build tinc
 RUN curl http://tinc-vpn.org/packages/tinc-1.1pre14.tar.gz | tar xzC /tmp && \
-cd /tmp/tinc-1.1pre14 && ./configure && make && make install
+cd /tmp/tinc-1.1pre14 && ./configure --sysconfdir=/etc && make && make install
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD scripts/ /root/scripts
