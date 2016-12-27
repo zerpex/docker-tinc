@@ -4,4 +4,4 @@
 /root/scripts/configure.sh
 
 # Runs tinc daemon
-/usr/local/sbin/tinc start -D
+/usr/local/sbin/tincd -D

@@ -12,8 +12,8 @@ RUN for i in `find / -perm +6000 -type f 2>/dev/null`; do chmod a-s $i; done
 RUN apt-get update && \
 apt-get install -y build-essential libncurses5-dev libreadline6-dev libzlcore-dev zlib1g-dev liblzo2-dev libssl-dev && \
 apt-get install -y --no-install-recommends net-tools supervisor curl && \
-curl http://tinc-vpn.org/packages/tinc-1.1pre14.tar.gz | tar xzC /tmp && \
-cd /tmp/tinc-1.1pre14 && ./configure --sysconfdir=/etc && make && make install && \
+curl http://tinc-vpn.org/packages/tinc-1.0.30.tar.gz | tar xzC /tmp && \
+cd /tmp/tinc-1.0.30 && ./configure --sysconfdir=/etc && make && make install && \
 apt-get purge --auto-remove -y build-essential libncurses5-dev libreadline6-dev libzlcore-dev zlib1g-dev liblzo2-dev libssl-dev && \
 apt-get install -y libc6 liblzo2-2 libncurses5 libreadline6 libssl1.0.0 libtinfo5 zlib1g init-system-helpers && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
