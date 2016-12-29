@@ -11,7 +11,7 @@ RUN for i in `find / -perm +6000 -type f 2>/dev/null`; do chmod a-s $i; done
 # libc6 (>= 2.15), liblzo2-2, libncurses5 (>= 6), libreadline6 (>= 6.0), libssl1.1 (>= 1.1.0~pre5), libtinfo5 (>= 6), zlib1g (>= 1:1.1.4), init-system-helpers (>= 1.18~)
 RUN apt-get update && \
 apt-get install -y build-essential libncurses5-dev libreadline6-dev libzlcore-dev zlib1g-dev liblzo2-dev libssl-dev && \
-apt-get install -y --no-install-recommends net-tools supervisor curl && \
+apt-get install -y --no-install-recommends iproute2 supervisor curl && \
 curl http://tinc-vpn.org/packages/tinc-1.0.30.tar.gz | tar xzC /tmp && \
 cd /tmp/tinc-1.0.30 && ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var && make && make install && \
 apt-get purge --auto-remove -y build-essential libncurses5-dev libreadline6-dev libzlcore-dev zlib1g-dev liblzo2-dev libssl-dev && \

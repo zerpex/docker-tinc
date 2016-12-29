@@ -77,10 +77,11 @@ if [[ $TINC_WEIGHT ]]; then grep -q "^Weight" $TINC_HOST_CONF && sed -i "s/^Weig
 
 # Create up & down scripts
 echo "#!/bin/sh
-ifconfig \$INTERFACE $TINC_IP netmask $TINC_NETMASK" > /etc/tinc/tinc-up
+ip addr add $TINC_IP dev \$INTERFACE
+ip link set \$INTERFACE up" > /etc/tinc/tinc-up
 
 echo "#!/bin/sh
-ifconfig \$INTERFACE down" > /etc/tinc/tinc-down
+ip link set \$INTERFACE down" > /etc/tinc/tinc-down
 
 chmod 775 /etc/tinc/tinc-up
 chmod 775 /etc/tinc/tinc-down
